@@ -76,23 +76,9 @@ chmod +x %{buildroot}/%{python_sitelib}/qpid/managementdata.py
 chmod +x %{buildroot}/%{python_sitelib}/qpid/disp.py
 popd
 
-# install examples
-mkdir -p -m0755 %{buildroot}%{_pythondocdir}/examples
-
 # clean up items we're not installing
-rm -f  %{buildroot}/%{_bindir}/qmf*
-rm -rf %{buildroot}/%{_includedir}/qmf
-rm -rf %{buildroot}/%{_libdir}/*qmf*
-rm -f  %{buildroot}/%{_libdir}/pkgconfig/qmf2.pc
-rm -rf %{buildroot}/%{python2_sitelib}/qmfgen
-rm -rf %{buildroot}/%{python2_sitearch}/*qmf*
-rm -rf %{buildroot}/%{python2_sitelib}/*qmf*
 rm -rf %{buildroot}/%{python2_sitearch}/*qpid_tests*
 rm -rf %{buildroot}/%{python2_sitelib}/*qpid_tests*
-
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
 
 
 %changelog
