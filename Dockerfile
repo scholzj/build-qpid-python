@@ -14,11 +14,11 @@ RUN yum -y install epel-release \
 RUN rpmdev-setuptree
 WORKDIR /root/rpmbuild/SOURCES
 
-RUN wget https://github.com/apache/qpid-python/archive/master.tar.gz
+RUN wget https://github.com/apache/qpid-python/archive/1.35.0-rc.tar.gz
 RUN tar -xf master.tar.gz
-RUN mv qpid-python-master/ qpid-python-1.36.0/
-RUN tar -z -cf qpid-python-1.36.0.tar.gz qpid-python-1.36.0/
-RUN rm -rf master.tar.gz qpid-python-1.36.0/
+RUN mv qpid-python-1.35.0-rc/ qpid-python-1.35.0/
+RUN tar -z -cf qpid-python-1.35.0.tar.gz qpid-python-1.35.0/
+RUN rm -rf master.tar.gz qpid-python-1.35.0-rc/
 
 ADD ./qpid-python.spec /root/rpmbuild/SPECS/qpid-python.spec
 
