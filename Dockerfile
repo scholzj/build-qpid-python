@@ -16,9 +16,9 @@ WORKDIR /root/rpmbuild/SOURCES
 
 RUN wget https://github.com/apache/qpid-python/archive/master.tar.gz
 RUN tar -xf master.tar.gz
-RUN mv qpid-python-master/ qpid-python-1.36.0/
-RUN tar -z -cf qpid-python-1.36.0.tar.gz qpid-python-1.36.0/
-RUN rm -rf master.tar.gz qpid-python-1.36.0/
+RUN mv qpid-python-master/ qpid-python-1.37.0/
+RUN tar -z -cf qpid-python-1.37.0.tar.gz qpid-python-1.37.0/
+RUN rm -rf master.tar.gz qpid-python-1.37.0/
 
 ADD ./qpid-python.spec /root/rpmbuild/SPECS/qpid-python.spec
 
