@@ -14,11 +14,10 @@ RUN yum -y install epel-release \
 RUN rpmdev-setuptree
 WORKDIR /root/rpmbuild/SOURCES
 
-RUN wget https://github.com/apache/qpid-python/archive/1.36.0-rc1.tar.gz
-RUN tar -xf 1.36.0-rc1.tar.gz
-RUN mv qpid-python-1.36.0-rc1/ qpid-python-1.36.0/
+RUN wget https://github.com/apache/qpid-python/archive/1.36.0.tar.gz
+RUN tar -xf 1.36.0.tar.gz
 RUN tar -z -cf qpid-python-1.36.0.tar.gz qpid-python-1.36.0/
-RUN rm -rf 1.36.0-rc1.tar.gz qpid-python-1.36.0/
+RUN rm -rf 1.36.0.tar.gz qpid-python-1.36.0/
 
 ADD ./qpid-python.spec /root/rpmbuild/SPECS/qpid-python.spec
 
@@ -34,8 +33,8 @@ WORKDIR /root/repo/CentOS/7/x86_64/
 RUN createrepo .
 WORKDIR /root/repo/CentOS/7/SRPMS
 RUN createrepo .
-RUN ncftpget -u $FTP_USERNAME -p $FTP_PASSWORD -R -DD $FTP_HOSTNAME /tmp/ /web/repo/qpid-python-testing/
-RUN ncftpput -u $FTP_USERNAME -p $FTP_PASSWORD -R $FTP_HOSTNAME /web/repo/qpid-python-testing/ /root/repo/*
+RUN ncftpget -u $FTP_USERNAME -p $FTP_PASSWORD -R -DD $FTP_HOSTNAME /tmp/ /web/repo/qpid-python-stable/
+RUN ncftpput -u $FTP_USERNAME -p $FTP_PASSWORD -R $FTP_HOSTNAME /web/repo/qpid-python-stable/ /root/repo/*
 
 # Nothing to run
 CMD    /bin/bash

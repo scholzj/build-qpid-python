@@ -3,7 +3,7 @@
 
 Name:          qpid-python
 Version:       1.36.0
-Release:       RC1%{?dist}
+Release:       %{?dist}
 Summary:       Libraries for Qpid Python
 License:       ASL 2.0
 URL:           http://qpid.apache.org
