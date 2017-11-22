@@ -2,7 +2,7 @@
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
 Name:          qpid-python
-Version:       1.37.0
+Version:       1.38.0
 Release:       SNAPSHOT%{?dist}
 Summary:       Libraries for Qpid Python
 License:       ASL 2.0
