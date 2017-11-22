@@ -79,6 +79,7 @@ popd
 # clean up items we're not installing
 rm -rf %{buildroot}/%{python2_sitearch}/*qpid_tests*
 rm -rf %{buildroot}/%{python2_sitelib}/*qpid_tests*
+rm -rf %{buildroot}/%{_bindir}/*.bat
 
 
 %changelog
