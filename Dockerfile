@@ -15,7 +15,6 @@ RUN rpmdev-setuptree
 WORKDIR /root/rpmbuild/SOURCES
 
 RUN wget https://github.com/apache/qpid-python/archive/1.37.0.tar.gz
-RUN tar -xf 1.37.0-rc1.tar.gz
 RUN mv 1.37.0.tar.gz qpid-python-1.37.0.tar.gz
 
 ADD ./qpid-python.spec /root/rpmbuild/SPECS/qpid-python.spec
