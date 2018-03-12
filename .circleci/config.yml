@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:17.06.0-git
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Build Docker image
+          command: docker build --no-cache --build-arg FTP_USERNAME=$FTP_USERNAME --build-arg FTP_PASSWORD=$FTP_PASSWORD --build-arg FTP_HOSTNAME=$FTP_HOSTNAME -t scholzj/qpid-python-build:travis .
+workflows:
+  version: 2
+  build-workflow:
+    jobs:
+      - build:
+            context: qpid-repos
