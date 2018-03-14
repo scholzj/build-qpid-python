@@ -1,14 +1,11 @@
-FROM		centos:centos7
+FROM		scholzj/centos-builder-base:centos7-latest
 MAINTAINER 	JAkub Scholz "www@scholzj.com"
 
 ARG FTP_USERNAME
 ARG FTP_PASSWORD
 ARG FTP_HOSTNAME
 
-# Install all dependencies
 USER root
-RUN yum -y install epel-release \
-        && yum -y install wget tar rpm-build rpmdevtools createrepo ncftp python-devel python-setuptools
 
 # Create the RPMs
 RUN rpmdev-setuptree
