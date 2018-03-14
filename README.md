@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/scholzj/build-qpid-python.svg?branch=master)](https://travis-ci.org/scholzj/build-qpid-python)
+[![CircleCI](https://circleci.com/gh/scholzj/build-qpid-python.svg?style=shield)](https://circleci.com/gh/scholzj/build-qpid-python)
 
 # Apache Qpid Python build pipeline
 
