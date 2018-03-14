@@ -14,4 +14,14 @@ workflows:
   build-workflow:
     jobs:
       - build:
-            context: qpid-repos
+          context: qpid-repos
+  scheduled-workflow:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - build:
+          context: qpid-repos
